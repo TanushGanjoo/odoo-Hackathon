@@ -9,7 +9,7 @@ import stopsRouter from "./routes/stops";
 import activitiesRouter from "./routes/activities";
 import expensesRouter from "./routes/expenses";
 import checklistRouter from "./routes/checklist";
-
+import calendarRouter from "./routes/calendar";
 
 const app = express();
 const PORT = env.port;
@@ -26,6 +26,7 @@ app.use("/api/trips", activitiesRouter);
 app.use("/api/trips", expensesRouter);
 
 app.use("/api/trips", checklistRouter);
+app.use("/api/trips", calendarRouter);
 
 app.get("/api/health", (_req, res) => {
   res.json({
