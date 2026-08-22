@@ -1,5 +1,4 @@
-import type { Profile } from '../types'
-
+import type { Profile } from '../../profile/types'
 interface ProfileCardProps {
   profile: Profile
 }

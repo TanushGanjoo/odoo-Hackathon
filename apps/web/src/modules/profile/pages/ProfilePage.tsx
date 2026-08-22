@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getProfile } from '../api'
 import type { Profile } from '../types'
-import { ProfileCard } from '../components/ProfileCard'
+import { ProfileCard } from '../../community/components/ProfileCard'
 
 export function ProfilePage() {
   const [profile, setProfile] = useState<Profile | null>(null)
