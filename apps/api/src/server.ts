@@ -6,6 +6,7 @@ import { prisma } from "./db/prisma";
 import meRouter from "./routes/me";
 import tripsRouter from "./routes/trips";
 import stopsRouter from "./routes/stops";
+import activitiesRouter from "./routes/activities";
 
 const app = express();
 const PORT = env.port;
@@ -17,6 +18,7 @@ app.use(clerkAuth);
 app.use("/api/me", meRouter);
 app.use("/api/trips", tripsRouter);
 app.use("/api/trips", stopsRouter);
+app.use("/api/trips", activitiesRouter);
 
 
 app.get("/api/health", (_req, res) => {
