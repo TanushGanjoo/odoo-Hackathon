@@ -6,32 +6,13 @@ import { prisma } from "./db/prisma";
 import meRouter from "./routes/me";
 import tripsRouter from "./routes/trips";
 import stopsRouter from "./routes/stops";
-import activitiesRouter from "./routes/activities";
-import expensesRouter from "./routes/expenses";
-import checklistRouter from "./routes/checklist";
-import calendarRouter from "./routes/calendar";
-import budgetRouter from "./routes/budget";
-import sharingRouter from "./routes/sharing";
+import profileRouter from "./routes/profile";
 
 const app = express();
 const PORT = env.port;
 
 app.use(cors());
 app.use(express.json());
-app.use(clerkAuth);
-
-app.use("/api/me", meRouter);
-app.use("/api/trips", tripsRouter);
-app.use("/api/trips", stopsRouter);
-
-app.use("/api/trips", activitiesRouter);
-app.use("/api/trips", expensesRouter);
-
-app.use("/api/trips", checklistRouter);
-app.use("/api/trips", calendarRouter);
-
-app.use("/api/trips", budgetRouter);
-app.use("/api/trips", sharingRouter);
 
 app.get("/api/health", (_req, res) => {
   res.json({
@@ -46,17 +27,24 @@ app.get("/api/db-health", async (_req, res) => {
 
     res.json({
       status: "ok",
-      database: "connected",
+      message: "Database is connected",
     });
   } catch (error) {
-    console.error(error);
+    console.error("Database health check failed:", error);
 
     res.status(500).json({
       status: "error",
-      database: "disconnected",
+      message: "Database connection failed",
     });
   }
 });
+
+app.use(clerkAuth);
+
+app.use("/api/me", meRouter);
+app.use("/api/trips", tripsRouter);
+app.use("/api/stops", stopsRouter);
+app.use("/api/profile", profileRouter);
 
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`);
