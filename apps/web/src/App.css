@@ -1,0 +1,483 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f8f5ee;
+  color: #17203a;
+}
+
+/* =========================
+   AUTH LAYOUT
+========================= */
+
+.auth-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f8f5ee;
+}
+
+.auth-hero {
+  position: relative;
+  width: 50%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111a32, #1d2a4a);
+  color: #ffffff;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 42px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flight-path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #ef765c;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.hero-copy {
+  width: min(620px, 100%);
+  margin: auto 0;
+}
+
+.hero-kicker {
+  margin: 0 0 18px;
+  color: #e6b95d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(40px, 4.6vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.hero-copy h1 span {
+  color: #ff937b;
+}
+
+.hero-copy > p:last-child {
+  max-width: 550px;
+  margin: 26px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.airport-row {
+  display: flex;
+  gap: 22px;
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+
+.auth-side {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: #fcfbf8;
+  overflow-y: auto;
+}
+
+.auth-ticket {
+  width: min(430px, 100%);
+  border: 1px solid #e5ded3;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow:
+    0 22px 55px rgba(16, 25, 47, 0.1),
+    0 4px 14px rgba(16, 25, 47, 0.04);
+}
+
+.ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  color: #6e7890;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ticket-line {
+  border-top: 1px dashed #e6dfd3;
+}
+
+.auth-content {
+  width: 100%;
+  padding: 28px 26px 18px;
+}
+
+.auth-content h2 {
+  margin: 0;
+  color: #17203a;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.auth-description {
+  max-width: 330px;
+  margin: 9px auto 22px;
+  color: #68728a;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.clerk-form {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/*
+  Only color overrides here.
+  Clerk controls its internal dimensions/layout.
+*/
+
+.clerk-form .cl-card {
+  background: #ffffff !important;
+  color: #17203a !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.clerk-form .cl-headerTitle {
+  color: #17203a !important;
+}
+
+.clerk-form .cl-headerSubtitle {
+  color: #66708b !important;
+}
+
+.clerk-form .cl-formFieldLabel {
+  color: #17203a !important;
+}
+
+.clerk-form .cl-formFieldInput {
+  background: #ffffff !important;
+  color: #17203a !important;
+  border-color: #ded8ce !important;
+}
+
+.clerk-form .cl-formFieldInput::placeholder {
+  color: #8a93a5 !important;
+  opacity: 1 !important;
+}
+
+.clerk-form .cl-formFieldInputShowPasswordButton {
+  color: #66708b !important;
+}
+
+.clerk-form .cl-socialButtonsBlockButton {
+  background: #ffffff !important;
+  color: #17203a !important;
+  border-color: #ded8ce !important;
+}
+
+.clerk-form .cl-socialButtonsBlockButtonText {
+  color: #17203a !important;
+}
+
+.clerk-form .cl-dividerLine {
+  background: #ded8ce !important;
+}
+
+.clerk-form .cl-dividerText {
+  color: #66708b !important;
+}
+
+.clerk-form .cl-formButtonPrimary {
+  background: #ef765c !important;
+  color: #ffffff !important;
+  border-color: #ef765c !important;
+}
+
+.clerk-form .cl-formButtonPrimary:hover {
+  background: #d95c43 !important;
+}
+
+.clerk-form .cl-footerActionText {
+  color: #66708b !important;
+}
+
+.clerk-form .cl-footerActionLink {
+  color: #d95c43 !important;
+}
+
+.auth-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 16px;
+  color: #68728a;
+  font-size: 13px;
+}
+
+.auth-switch button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #d95c43;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.auth-switch button:hover {
+  text-decoration: underline;
+}
+
+.ticket-bottom {
+  padding: 13px 20px 15px;
+  border-top: 1px solid #f0ebe3;
+  color: #9aa1af;
+  text-align: center;
+  font-size: 10px;
+}
+
+/* =========================
+   SIGNED-IN APP
+========================= */
+
+.app-shell {
+  min-height: 100vh;
+  background: #f7f3eb;
+  color: #17203a;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 70px;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111a32;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-nav button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.app-nav button:hover,
+.app-nav button.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.home-page {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home-kicker {
+  margin: 0 0 15px;
+  color: #d95c43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.home-page h1 {
+  max-width: 780px;
+  margin: 0;
+  color: #17203a;
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.home-page > p:last-child {
+  max-width: 550px;
+  margin: 20px auto 0;
+  color: #68728a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.page-container {
+  min-height: calc(100vh - 70px);
+  padding: 36px 24px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  background: #111a32;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #ef765c;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .auth-layout {
+    flex-direction: column;
+  }
+
+  .auth-hero {
+    width: 100%;
+    min-height: 380px;
+  }
+
+  .hero-content {
+    min-height: 380px;
+    padding: 28px;
+  }
+
+  .auth-side {
+    width: 100%;
+    min-height: auto;
+    padding: 28px 16px 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-copy h1 {
+    font-size: 40px;
+  }
+
+  .auth-content {
+    padding: 24px 18px 16px;
+  }
+
+  .ticket-top {
+    padding: 14px 18px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .app-nav {
+    flex-wrap: wrap;
+  }
+}

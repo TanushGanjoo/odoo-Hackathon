@@ -1,0 +1,2 @@
+﻿# odoo-Hackathon
+We are building globaltrotter application using postgreSQl
