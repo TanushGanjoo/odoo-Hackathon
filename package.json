@@ -1,0 +1,21 @@
+{
+  "name": "odoo-hackathon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GlobalTrotter application built with PostgreSQL",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "build": "npm run build --workspace=apps/web",
+    "test": "npm test --workspaces"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanushGanjoo/odoo-Hackathon.git"
+  },
+  "license": "ISC",
+  "type": "commonjs"
+}
